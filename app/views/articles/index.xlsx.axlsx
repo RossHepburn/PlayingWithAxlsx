@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Articles") do |sheet|
+  sheet.add_row ["ID", "Title", "Text"], style: Axlsx::STYLE_THIN_BORDER
+  @articles.each do |a|
+    sheet.add_row [a.id, a.title, a.text]
+  end
+end
